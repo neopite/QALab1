@@ -1,3 +1,5 @@
+package forumPost;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +20,7 @@ public class ForumPostPage {
     @FindBy(id = "people")
     private WebElement allPeoples;
 
-    @FindBy(className = "big-button big-button_events")
+    @FindBy(className = "big-button_events")
     private WebElement buttonGoToEvent;
 
     @FindBy(id ="btnLike")
@@ -33,5 +35,8 @@ public class ForumPostPage {
     }
     public WebElement getCurrentStateOfLikes(){
      return driver.findElement(By.id("btnLike")).findElement(By.className("likely__counter"));
+    }
+    public WebElement getCurrentStatusOfIWillGoButton(){
+        return driver.findElement(By.cssSelector("button[class*='big-button big-button_events checked']"));
     }
 }

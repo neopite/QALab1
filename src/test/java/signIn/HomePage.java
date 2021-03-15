@@ -17,8 +17,8 @@ public class HomePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
-    public String correctEmail = "vs@gmail.com";
-    public String correctPassword = "vs";
+    public String correctEmail = "v@gmail.com";
+    public String correctPassword = "v";
     
     @FindBy(id = "login-link")
     private WebElement signInLink;

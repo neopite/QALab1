@@ -2,11 +2,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import signIn.HomePage;
-import signIn.SignInTest;
 import signIn.Util;
+import userProfile.UserProfilePage;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class LogoutTest extends SignInTest {

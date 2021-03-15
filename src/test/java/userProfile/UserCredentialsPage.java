@@ -1,21 +1,25 @@
+package userProfile;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UserProfilePage {
+public class UserCredentialsPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public UserProfilePage(WebDriver driver) {
+    public UserCredentialsPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
 
-    @FindBy(xpath = "//a[text()=\"Logout\"]")
-    WebElement logoutButton;
+    @FindBy(id = "txtdisplay_name")
+    public WebElement username;
 
-    public void submitLogout(){
-        logoutButton.click();
-    }
+    @FindBy(id = "topError")
+    public WebElement incorrectUsername;
+
+    @FindBy(id = "btnSubmit")
+    public WebElement saveButton;
 }
