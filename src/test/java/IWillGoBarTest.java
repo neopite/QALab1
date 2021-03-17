@@ -13,7 +13,7 @@ public class IWillGoBarTest extends BasicTestSetup {
     @Test
     public void changeIWillGoButtonStatus(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-        Util.login(homePage,webDriver,homePage.correctEmail,homePage.correctPassword);
+        Util.login(homePage,webDriver,System.getenv("login"),System.getenv("password"));
         Util.openPage(webDriver,ForumPostPage.page);
         ForumPostPage forumPostPage = PageFactory.initElements(webDriver,ForumPostPage.class);
         forumPostPage.changeAllPeopleStatus();

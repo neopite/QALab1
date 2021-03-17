@@ -11,7 +11,7 @@ public class LikeStatusChangeTest extends BasicTestSetup {
     @Test
     public void clickOnLikeSuccessful(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-        Util.login(homePage,webDriver,homePage.correctEmail,homePage.correctPassword);
+        Util.login(homePage,webDriver,System.getenv("login"),System.getenv("password"));
         Util.openPage(webDriver,ForumPostPage.page);
         ForumPostPage forumPostPage = PageFactory.initElements(webDriver,ForumPostPage.class);
         String likes = forumPostPage.getCurrentStateOfLikes().getText();

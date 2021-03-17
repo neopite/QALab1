@@ -18,8 +18,8 @@ public class HomePage {
         wait = new WebDriverWait(driver, 10);
     }
 
-    public String correctEmail = "stamin4ik4@gmail.com";
-    public String correctPassword = "Stamin4ik161291";
+    public static String correctEmail = System.getProperty("login");
+    public static String correctPassword = System.getProperty("password");
 
     @FindBy(id = "login-link")
     private WebElement signInLink;

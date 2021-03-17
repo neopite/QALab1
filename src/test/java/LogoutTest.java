@@ -12,7 +12,7 @@ public class LogoutTest extends BasicTestSetup {
     @Test
     public void succesfullLogout(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-        Util.login(homePage,webDriver,homePage.correctEmail,homePage.correctPassword);
+        Util.login(homePage,webDriver,System.getenv("login"),System.getenv("password"));
         homePage.profileIcon.click();
         UserProfilePage userProfilePage = PageFactory.initElements(webDriver,UserProfilePage.class);
         userProfilePage.submitLogout();

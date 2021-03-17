@@ -19,14 +19,15 @@ public class SignInTest extends BasicTestSetup{
     @Test
     public void signIn(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-        Util.login(homePage,webDriver,homePage.correctEmail,homePage.correctPassword);
+        Util.login(homePage,webDriver,System.getenv("login"),System.getenv("password"));
         assertNotEquals(homePage.profileIcon,null);
     }
-    @Test
+  /*
+   @Test
     public void signInFailed(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-        Util.login(homePage,webDriver,"gregerger@gmail.com","gf34g34g34");
+       Util.login(homePage,webDriver,"gregerger@gmail.com","gf34g34g34");
         assertNotEquals(homePage.getErrorField(),null);
     }
-
+   */
 }
