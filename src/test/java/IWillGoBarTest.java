@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
-public class IWillGoBarTest extends SignInTest {
+public class IWillGoBarTest extends BasicTestSetup {
 
     @Test
     public void changeIWillGoButtonStatus(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
         Util.login(homePage,webDriver,homePage.correctEmail,homePage.correctPassword);
-        Util.openPage(webDriver,"https://dou.ua/calendar/36436/");
+        Util.openPage(webDriver,ForumPostPage.page);
         ForumPostPage forumPostPage = PageFactory.initElements(webDriver,ForumPostPage.class);
         forumPostPage.changeAllPeopleStatus();
         String newStatusOfButton = forumPostPage.getCurrentStatusOfIWillGoButton().getText();

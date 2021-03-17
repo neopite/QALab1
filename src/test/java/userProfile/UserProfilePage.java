@@ -1,5 +1,6 @@
 package userProfile;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,10 +24,15 @@ public class UserProfilePage {
     @FindBy(className = "head")
     public WebElement profileHeader;
 
-    public void submitLogout(){
+    public void submitLogout() {
         logoutButton.click();
     }
-    public void submitButton(){
+
+    public void submitButton() {
         editProfileButton.click();
+    }
+
+    public WebElement getProfileUsername() {
+        return profileHeader.findElement(By.cssSelector("h1"));
     }
 }

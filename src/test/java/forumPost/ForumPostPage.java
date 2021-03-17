@@ -15,7 +15,7 @@ public class ForumPostPage {
         wait = new WebDriverWait(driver, 10);
     }
 
-    public String page = "https://dou.ua/calendar/36436/";
+    public static String page = "https://dou.ua/calendar/31729/";
 
     @FindBy(id = "people")
     private WebElement allPeoples;
@@ -39,4 +39,5 @@ public class ForumPostPage {
     public WebElement getCurrentStatusOfIWillGoButton(){
         return driver.findElement(By.cssSelector("button[class*='big-button big-button_events checked']"));
     }
+
 }

@@ -22,4 +22,8 @@ public class UserCredentialsPage {
 
     @FindBy(id = "btnSubmit")
     public WebElement saveButton;
+
+    public void setNewUsername(String username){
+        this.username.sendKeys(username);
+    }
 }

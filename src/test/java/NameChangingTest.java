@@ -9,20 +9,20 @@ import userProfile.UserProfilePage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class NameChangingTest extends SignInTest {
+public class NameChangingTest extends BasicTestSetup {
 
     @Test
-    public void changeNameAndSurnameOnProfilePage(){
-            HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-            Util.login(homePage,webDriver,homePage.correctEmail,homePage.correctPassword);
-            webDriver.findElement(By.className("min-profile")).click();
-            UserProfilePage userProfilePage = PageFactory.initElements(webDriver,UserProfilePage.class);
-            userProfilePage.submitButton();
-            UserCredentialsPage userCredentialsPage = PageFactory.initElements(webDriver,UserCredentialsPage.class);
-            userCredentialsPage.username.clear();
-            userCredentialsPage.username.sendKeys("Obruch Vladimir");
-            userCredentialsPage.saveButton.click();
-            String text=userProfilePage.profileHeader.findElement(By.cssSelector("h1")).getText();
-            assertEquals(text,"Obruch Vladimir");
+    public void changeNameAndSurnameOnProfilePage() {
+        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
+        Util.login(homePage, webDriver, homePage.correctEmail, homePage.correctPassword);
+        homePage.profileIcon.click();
+        UserProfilePage userProfilePage = PageFactory.initElements(webDriver, UserProfilePage.class);
+        userProfilePage.submitButton();
+        UserCredentialsPage userCredentialsPage = PageFactory.initElements(webDriver, UserCredentialsPage.class);
+        userCredentialsPage.username.clear();
+        userCredentialsPage.setNewUsername("Obruch Vladimir");
+        userCredentialsPage.saveButton.click();
+        String text = userProfilePage.getProfileUsername().getText();
+        assertEquals(text, "Obruch Vladimir");
     }
 }
