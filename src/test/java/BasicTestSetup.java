@@ -2,6 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
@@ -13,8 +14,8 @@ public class BasicTestSetup {
 
     @BeforeEach
     public void setup() {
-        WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
+        WebDriverManager.edgedriver().setup();
+        webDriver = new EdgeDriver();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }

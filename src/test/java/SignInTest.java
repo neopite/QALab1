@@ -9,9 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import signIn.HomePage;
 import signIn.Util;
 
-import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class SignInTest extends BasicTestSetup {
