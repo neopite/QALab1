@@ -39,5 +39,4 @@ public class ForumPostPage {
     public WebElement getCurrentStatusOfIWillGoButton(){
         return driver.findElement(By.cssSelector("button[class*='big-button big-button_events checked']"));
     }
-
 }

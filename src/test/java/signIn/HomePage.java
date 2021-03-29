@@ -47,7 +47,6 @@ public class HomePage {
         parentWindow = driver.getWindowHandle();
         signInWindow = Util.getPopupWindow(driver);
         Util.switchToWindow(driver, signInWindow);
-
     }
 
     public void getVisibleOf(WebElement webElement) {

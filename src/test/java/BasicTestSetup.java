@@ -16,5 +16,4 @@ public class BasicTestSetup {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-
 }

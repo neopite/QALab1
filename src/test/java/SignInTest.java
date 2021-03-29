@@ -11,23 +11,16 @@ import signIn.Util;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class SignInTest extends BasicTestSetup{
+public class SignInTest extends BasicTestSetup {
 
 
     @Test
-    public void signIn(){
+    public void signIn() {
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-        Util.login(homePage,webDriver,System.getenv("login"),System.getenv("password"));
-        assertNotEquals(homePage.profileIcon,null);
+        Util.login(homePage, webDriver, System.getenv("login"), System.getenv("password"));
+        assertNotEquals(homePage.profileIcon, null);
     }
-  /*
-   @Test
-    public void signInFailed(){
-        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
-       Util.login(homePage,webDriver,"gregerger@gmail.com","gf34g34g34");
-        assertNotEquals(homePage.getErrorField(),null);
-    }
-   */
 }
