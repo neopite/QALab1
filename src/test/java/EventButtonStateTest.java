@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EventButtonStateTest extends BasicTestSetup {
 
-    @Test
     public void changeIWillGoButtonStatus() {
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
         Util.login(homePage, webDriver, System.getenv("login"), System.getenv("password"));

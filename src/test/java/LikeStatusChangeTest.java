@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
 public class LikeStatusChangeTest extends BasicTestSetup {
-    @Test
+
     public void clickOnLikeSuccessful(){
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
         Util.login(homePage,webDriver,System.getenv("login"),System.getenv("password"));
