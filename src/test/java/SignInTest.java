@@ -9,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import signIn.HomePage;
 import signIn.Util;
 
+import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class SignInTest extends BasicTestSetup {
@@ -21,4 +23,12 @@ public class SignInTest extends BasicTestSetup {
         Util.login(homePage, webDriver, System.getenv("login"), System.getenv("password"));
         assertNotEquals(homePage.profileIcon, null);
     }
+
+    @Test
+    public void signInFailed() {
+        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
+        Util.login(homePage, webDriver, "", "");
+        assertEquals(homePage.profileIcon, null);
+    }
+
 }
